@@ -2,6 +2,7 @@ import { View, Text,Image, SafeAreaView } from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import ProfileCard from '../Components/ProfileCard';
+import History from '../Components/History';
 const HomeScreen = () => {
    const navigation=useNavigation();
 
@@ -12,6 +13,7 @@ const HomeScreen = () => {
      }, []);
 
 return(
+  <View>
     <SafeAreaView className='bg-teal-600 pt-10'>
         
     {/*Header*/}
@@ -26,9 +28,10 @@ return(
           <Text className='font-bold text-xl'>MedDOCS</Text>
        </View>
       </View>   
+      </SafeAreaView>
 
-     <View className='bg-black-900-100 ' >
-      <View className='bg-blue-100 pb-2 pt-2 mt-4 mb-4 mx-5 rounded-3xl' >
+      <View className='bg-black-900-100 mt-9' >
+      <View className='bg-blue-100 pb-2   mb-4 mx-5 rounded-3xl' >
         <ProfileCard 
            pid="239AC34" 
            name="John Doe" 
@@ -39,11 +42,17 @@ return(
 
        </View>
      </View>
-     
-      
-      
-    </SafeAreaView>
-    
+     <View className='bg-black-900-100 mt-9' >
+      <View className='bg-blue-100 pb-2   mb-4 mx-5 rounded-3xl' >
+        <History
+           a='a'
+           b='b'
+           c='c' 
+        />
+
+       </View>
+     </View>
+    </View>
     );
 }
    
